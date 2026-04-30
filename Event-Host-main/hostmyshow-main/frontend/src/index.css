@@ -1,0 +1,609 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* ============================================
+   STANDARDIZED DESIGN SYSTEM - MODERN UI
+   ============================================ */
+
+/* Light Theme Colors */
+:root {
+  /* Base */
+  --radius: 0.625rem;
+  --background: oklch(0.98 0.02 240);
+  --foreground: oklch(0.2 0.02 240);
+  
+  /* Card */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.02 240);
+  
+  /* Popover */
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.02 240);
+  
+  /* Primary - Brand Blue */
+  --primary: oklch(0.55 0.15 245);
+  --primary-foreground: oklch(1 0 0);
+  
+  /* Secondary */
+  --secondary: oklch(0.95 0.02 240);
+  --secondary-foreground: oklch(0.2 0.02 240);
+  
+  /* Muted */
+  --muted: oklch(0.95 0.02 240);
+  --muted-foreground: oklch(0.5 0.02 240);
+  
+  /* Accent */
+  --accent: oklch(0.95 0.02 240);
+  --accent-foreground: oklch(0.2 0.02 240);
+  
+  /* Destructive */
+  --destructive: oklch(0.55 0.18 25);
+  --destructive-foreground: oklch(1 0 0);
+  
+  /* Border & Input */
+  --border: oklch(0.9 0.02 240);
+  --input: oklch(0.9 0.02 240);
+  --ring: oklch(0.55 0.15 245);
+  
+  /* Charts */
+  --chart-1: oklch(0.55 0.15 245);
+  --chart-2: oklch(0.6 0.18 280);
+  --chart-3: oklch(0.55 0.12 150);
+  --chart-4: oklch(0.65 0.15 30);
+  --chart-5: oklch(0.55 0.12 320);
+  
+  /* Sidebar */
+  --sidebar: oklch(0.98 0.02 240);
+  --sidebar-foreground: oklch(0.2 0.02 240);
+  --sidebar-primary: oklch(0.55 0.15 245);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.95 0.02 240);
+  --sidebar-accent-foreground: oklch(0.2 0.02 240);
+  --sidebar-border: oklch(0.9 0.02 240);
+  --sidebar-ring: oklch(0.55 0.15 245);
+  
+  /* Custom Brand Colors */
+  --brand-50: oklch(0.97 0.02 245);
+  --brand-100: oklch(0.92 0.05 245);
+  --brand-200: oklch(0.85 0.10 245);
+  --brand-300: oklch(0.72 0.15 245);
+  --brand-400: oklch(0.60 0.18 245);
+  --brand-500: oklch(0.55 0.15 245);
+  --brand-600: oklch(0.48 0.14 245);
+  --brand-700: oklch(0.40 0.12 245);
+  --brand-800: oklch(0.30 0.08 245);
+  --brand-900: oklch(0.22 0.05 245);
+  
+  /* Glass Effect */
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-dark-bg: rgba(0, 0, 0, 0.25);
+  --glass-dark-border: rgba(255, 255, 255, 0.08);
+  
+  /* Modern shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.3);
+}
+
+/* Dark Theme Colors */
+.dark {
+  --background: oklch(0.15 0.02 240);
+  --foreground: oklch(0.95 0.02 240);
+  --card: oklch(0.18 0.02 240);
+  --card-foreground: oklch(0.95 0.02 240);
+  --popover: oklch(0.18 0.02 240);
+  --popover-foreground: oklch(0.95 0.02 240);
+  --primary: oklch(0.65 0.18 245);
+  --primary-foreground: oklch(0.1 0.02 240);
+  --secondary: oklch(0.25 0.02 240);
+  --secondary-foreground: oklch(0.95 0.02 240);
+  --muted: oklch(0.25 0.02 240);
+  --muted-foreground: oklch(0.65 0.02 240);
+  --accent: oklch(0.25 0.02 240);
+  --accent-foreground: oklch(0.95 0.02 240);
+  --destructive: oklch(0.55 0.18 25);
+  --destructive-foreground: oklch(0.95 0.02 240);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.65 0.18 245);
+  --chart-1: oklch(0.65 0.18 245);
+  --chart-2: oklch(0.65 0.18 280);
+  --chart-3: oklch(0.55 0.12 150);
+  --chart-4: oklch(0.65 0.15 30);
+  --chart-5: oklch(0.55 0.12 320);
+  --sidebar: oklch(0.18 0.02 240);
+  --sidebar-foreground: oklch(0.95 0.02 240);
+  --sidebar-primary: oklch(0.65 0.18 245);
+  --sidebar-primary-foreground: oklch(0.1 0.02 240);
+  --sidebar-accent: oklch(0.25 0.02 240);
+  --sidebar-accent-foreground: oklch(0.95 0.02 240);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: oklch(0.65 0.18 245);
+  
+  /* Dark Glass Effect */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-dark-bg: rgba(0, 0, 0, 0.4);
+  --glass-dark-border: rgba(255, 255, 255, 0.06);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    
+    /* Modern gradient background */
+    background: 
+      radial-gradient(ellipse at 0% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 100% 0%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 100% 100%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 0% 100%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+      linear-gradient(180deg, #0a0a0f 0%, #0f0f1a 50%, #0a0a0f 100%);
+    background-size: 100% 100%;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Animated mesh gradient overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.05) 0%, transparent 30%);
+    z-index: -1;
+    pointer-events: none;
+    animation: meshMove 20s ease-in-out infinite;
+  }
+
+  @keyframes meshMove {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(-10px, 10px) scale(1.02); }
+    50% { transform: translate(10px, -10px) scale(0.98); }
+    75% { transform: translate(-5px, -5px) scale(1.01); }
+  }
+
+  /* Noise texture overlay */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  /* Typography Scale */
+  h1 {
+    @apply text-4xl font-bold tracking-tight;
+    background: linear-gradient(135deg, #fff 0%, #a5b4fc 50%, #c084fc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  h2 {
+    @apply text-3xl font-semibold tracking-tight;
+    background: linear-gradient(135deg, #e2e8f0 0%, #818cf8 50%, #c084fc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  h3 {
+    @apply text-2xl font-semibold;
+    background: linear-gradient(135deg, #e2e8f0 0%, #60a5fa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  h4 {
+    @apply text-xl font-medium;
+    color: #e2e8f0;
+  }
+  h5 {
+    @apply text-lg font-medium;
+    color: #cbd5e1;
+  }
+  h6 {
+    @apply text-base font-medium;
+    color: #94a3b8;
+  }
+  
+  p {
+    @apply text-base leading-relaxed;
+  }
+  
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+/* ============================================
+   TAILwind UTILITIES
+   ============================================ */
+@tailwind utilities;
+
+/* ============================================
+   CUSTOM UTILITY CLASSES
+   ============================================ */
+
+/* Animation Keyframes */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+  }
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ============================================
+   GLASS MORPHISM COMPONENTS
+   ============================================ */
+
+/* Primary Glass Card */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s ease;
+}
+
+.glass:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* Dark Glass (for overlays) */
+.glass-dark {
+  background: var(--glass-dark-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-dark-border);
+}
+
+/* Glass Card Variant */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+/* Glass Button */
+.glass-button {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ============================================
+   BUTTON GLOW EFFECTS
+   ============================================ */
+
+.glow-blue {
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
+}
+
+.glow-blue:hover {
+  box-shadow: 0 6px 28px rgba(99, 102, 241, 0.5);
+}
+
+.glow-purple {
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.35);
+}
+
+.glow-purple:hover {
+  box-shadow: 0 6px 28px rgba(139, 92, 246, 0.5);
+}
+
+.glow-green {
+  box-shadow: 0 4px 20px rgba(34, 197, 94, 0.35);
+}
+
+.glow-green:hover {
+  box-shadow: 0 6px 28px rgba(34, 197, 94, 0.5);
+}
+
+.glow-orange {
+  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.35);
+}
+
+.glow-orange:hover {
+  box-shadow: 0 6px 28px rgba(249, 115, 22, 0.5);
+}
+
+.glow-red {
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.35);
+}
+
+.glow-red:hover {
+  box-shadow: 0 6px 28px rgba(239, 68, 68, 0.5);
+}
+
+.glow-indigo {
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
+}
+
+.glow-indigo:hover {
+  box-shadow: 0 6px 28px rgba(99, 102, 241, 0.5);
+}
+
+/* ============================================
+   BRAND GRADIENTS
+   ============================================ */
+
+.bg-gradient-brand {
+  background: linear-gradient(135deg, oklch(0.55 0.15 245), oklch(0.6 0.18 280));
+}
+
+.bg-gradient-brand-reverse {
+  background: linear-gradient(135deg, oklch(0.6 0.18 280), oklch(0.55 0.15 245));
+}
+
+.text-gradient-brand {
+  background: linear-gradient(135deg, oklch(0.55 0.15 245), oklch(0.6 0.18 280));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ============================================
+   FORM INPUT STYLES
+   ============================================ */
+
+.input-glass {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.input-glass::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input-glass:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+
+/* ============================================
+   CARD VARIANTS
+   ============================================ */
+
+.card-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.card-glass-interactive {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card-glass-interactive:hover {
+  transform: scale(1.02);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================
+   BORDER STYLES
+   ============================================ */
+
+.border-glass {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.border-glass-light {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ============================================
+   SHINING BORDER EFFECT
+   ============================================ */
+
+.shining-border::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    #ff0000 0%,
+    #ff7f00 10%,
+    #ffff00 20%,
+    #00ff00 30%,
+    #0000ff 40%,
+    #4b0082 50%,
+    #9400d3 60%,
+    #ff0000 70%,
+    #ff7f00 80%,
+    #ffff00 90%,
+    #00ff00 100%
+  );
+  animation: rotate 4s linear infinite;
+  z-index: -1;
+}
+
+.shining-border {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.shining-border::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  border-radius: inherit;
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0.7;
+}
+
+/* ============================================
+   UTILITY CLASSES FOR SPACING
+   ============================================ */
+
+/* Consistent spacing scale */
+.space-xs { gap: 0.25rem; }
+.space-sm { gap: 0.5rem; }
+.space-md { gap: 1rem; }
+.space-lg { gap: 1.5rem; }
+.space-xl { gap: 2rem; }
+.space-2xl { gap: 3rem; }
+
+/* Container max-width */
+.container-app {
+  @apply container mx-auto px-4;
+  max-width: 1400px;
+}
+
+/* ============================================
+   RESPONSIVE UTILITIES
+   ============================================ */
+
+@media (max-width: 640px) {
+  h1 { @apply text-3xl; }
+  h2 { @apply text-2xl; }
+  h3 { @apply text-xl; }
+}
