@@ -1,82 +1,81 @@
-# HostMyShow - Event Management & Ticketing Platform
+HostMyShow - Event Management & Ticketing Platform
+Overview
 
-## Overview
+HostMyShow is a full-featured event management and ticket booking platform built using the MERN stack. It allows users to explore and book events, while organizers can create and manage their shows. Admins oversee event approvals, ensuring a smooth and trusted experience. The platform includes OTP-based login, role-based access, and a clean, responsive UI using modern design principles like glassmorphism.
 
-**HostMyShow** is a full-featured event management and ticket booking platform built using the MERN stack. It allows users to explore and book events, while organizers can create and manage their shows. Admins oversee event approvals, ensuring a smooth and trusted experience. The platform includes OTP-based login, role-based access, and a clean, responsive UI using modern design principles like glassmorphism.
+Table of Contents
+Tech Stack
+Features
+Installation and Setup
+Project Structure
+Environment Variables
+Known Issues
+Future Improvements
+About Me
+License
+Tech Stack
+Frontend
+React + Vite
+Tailwind CSS (Glassmorphism UI)
+React Router DOM
+Context API / Zustand
+Lucide React
+Radix UI & shadcn/ui
+Backend
+Node.js + Express.js
+MongoDB + Mongoose
+JWT Authentication
+Axios
+Nodemailer for OTP verification
+Features
+User Features
+Browse upcoming events
+Search and filter events
+Book tickets online
+OTP-based secure login
+View booking history and tickets
+Organizer Features
+Organizer registration and login
+Create, update, and delete events
+Manage bookings and attendees
+View analytics and booking statistics
+Admin Features
+Approve or reject events
+Manage users and organizers
+Monitor overall platform activities
+Common Features
+Role-based authentication and routing
+Responsive glassmorphism UI
+Toast notifications
+Secure API integration
+Smooth navigation experience
+Installation and Setup
+Prerequisites
 
----
+Before starting, make sure you have:
 
-## Table of Contents
-
-1. [Tech Stack](#tech-stack)  
-2. [Features](#features)  
-3. [Installation and Setup](#installation-and-setup)  
-4. [Project Structure](#project-structure)  
-5. [Environment Variables](#environment-variables)  
-6. [Known Issues](#known-issues)  
-7. [Future Improvements](#future-improvements)  
-8. [About Me](#about-me)  
-9. [License](#license)
-
----
-
-## Tech Stack
-
-### Frontend
-- React + Vite
-- Tailwind CSS (with glassmorphism UI)
-- React Router DOM
-- Context API for state management
-- Lucide React, Radix UI, shadcn/ui
-
-### Backend
-- Node.js + Express
-- MongoDB + Mongoose
-- JWT Authentication
-- Axios for HTTP requests
-
----
-
-## Features
-
-### User
-- Browse upcoming events
-- Book tickets
-- OTP-based login
-- View personal bookings
-
-### Organizer
-- Register and login as an organizer
-- Create and manage event listings
-- View booking statistics
-
-### Admin
-- Approve or reject new events
-- View and manage platform activity
-
-### Common Features
-- Role-based routing and dashboard
-- Glassmorphism UI with responsive layout
-- Toast notifications and smooth navigation
-
----
+Node.js (v14 or higher)
+MongoDB Atlas account or local MongoDB setup
+Git installed on your system
 
 
-## Installation and Setup
 
-### Prerequisites
-
-- Node.js (v14+)
-- MongoDB Atlas or local instance
-
-### Steps
-
-1. **Clone the Repository**
-
-```bash
-git clone https://github.com/sakshinehe/hostmyshow.git
-cd hostmyshow
-
-cd backend
-npm install
-npm run dev
+# Project Structure
+hostmyshow/
+│
+├── frontend/
+│   ├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── context/
+│   └── assets/
+│
+├── backend/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── middleware/
+│   ├── utils/
+│   └── config/
+│
+└── README.md
